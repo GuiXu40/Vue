@@ -6,6 +6,7 @@
 #### :meat_on_bone:<a href="v-bind与class与style绑定.md">v-bind与class与style绑定</a>
 #### :meat_on_bone:<a href="内置指令.md">内置指令</a>
 #### :meat_on_bone:<a href="表单和v-model.md">表单和v-model</a>
+#### :meat_on_bone:<a href="组件.md">组件</a>
 ---------------------------------
 # ----------------------标题------------------------
 <p id="title"></p>
