@@ -184,15 +184,161 @@
 ```
 多选
 ```JavaScript
-
+<body>
+    <div id="app">
+        <select name="" id="" v-model="selected">
+            <option value="">html</option>
+            <option value="js">javascript</option>
+            <option value="">css</option>
+        </select>
+        <p>选择的项为{{selected}}</p>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var app=new Vue({
+        el: '#app',
+        data: {
+           selected: ['html','js']
+        }
+    });
+</script>
 ```
 <p id="p2"></p>
 
 ## :egg:绑定值
 :spades:<a href="#title">回到目录</a><br>
-#### :hearts:
+绑定一个动态的数据,搭配v-bind来实现
+
+单选按钮
+```JavaScript
+<body>
+    <div id="app">
+        <input type="radio" name="" id="" v-model="picked" :value="value">
+        <label for="">单选按钮</label>
+        <p>{{picked}}</p>
+        <p>{{value}}</p>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var app=new Vue({
+        el: '#app',
+        data: {
+           picked: false,
+           value: 123
+        }
+    });
+</script>
+```
+当选中时,picked==value==123
+
+复选框:
+```JavaScript
+<body>
+    <div id="app">
+        <input type="checkbox" name="" id="" v-model="toggle" :true-value="value1" :false-value="value2">
+        <label for="">复选框</label>
+        <p>{{toggle}}</p>
+        <p>{{value1}}</p>
+        <p>{{value2}}</p>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var app=new Vue({
+        el: '#app',
+        data: {
+           toggle: false,
+           value1: 'a',
+           value2: 'b'
+        }
+    });
+</script>
+```
+勾选时,toggle==value1,未勾选时toggle==Value2
+
+#### :hearts:选择列表
+```JavaScript
+<body>
+    <div id="app">
+        <select name="" id="" v-model="selected">
+            <option value="" :value="{number: 123}">123</option>
+        </select>
+        {{selected.number}}
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var app=new Vue({
+        el: '#app',
+        data: {
+           selected: ''
+        }
+    });
+</script>
+```
+当选中时,app.selected是一个Object
 <p id="p3"></p>
 
 ## :egg:修饰符
 :spades:<a href="#title">回到目录</a><br>
-#### :hearts:
+#### :hearts:.lazy
+v-model默认在input事件中同步输入框的数据,使用修饰符.lazy会转变为change事件中同步
+```JavaScript
+<body>
+    <div id="app">
+        <input type="text" name="" id="" v-model.lazy="message">
+        <p>{{message}}</p>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var app=new Vue({
+        el: '#app',
+        data: {
+           message: ''
+        }
+    });
+</script>
+```
+#### :hearts:.number
+将输入转换为Number类型
+```JavaScript
+<body>
+    <div id="app">
+        <input type="text" name="" id="" v-model.number="message">
+        <p>{{typeof message}}</p>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var app=new Vue({
+        el: '#app',
+        data: {
+           message: 123
+        }
+    });
+</script>
+```
+#### :hearts:.trim
+可以自动过滤输入的首尾空格
+```JavaScript
+<body>
+    <div id="app">
+        <input type="text" name="" id="" v-model.trim="message">
+        <p>{{message}}</p>
+    </div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+    var app=new Vue({
+        el: '#app',
+        data: {
+           message: ''
+        }
+    });
+</script>
+```
+
+总结: 感觉这个vue是真的强,避开所有渲染,方便!!加油学习
