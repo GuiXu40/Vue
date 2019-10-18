@@ -1,0 +1,12 @@
+[v-cloak] {
+    display: none;
+}
+#app {
+    margin-top: 200px;
+}
+th {
+    text-align: center;
+}
+tr {
+    text-align: center;
+}
