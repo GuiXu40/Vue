@@ -1,0 +1,88 @@
+# ----------------------Render函数------------------------
+<p id="title"></p>
+
+## :fish_cake:目录
+#### <a href="#p1">:diamonds:Virtual DOM</a>
+#### <a href="#p2">:diamonds:Render函数</a>
+#### <a href="#p3">:diamonds:createElement用法</a>
+#### <a href="#p4">:diamonds:函数化组件</a>
+#### <a href="#p5">:diamonds:JSX</a>
+#### <a href="#p6">:diamonds:使用Render函数开发可排序的表格组件</a>
+#### <a href="#p7">:diamonds:留言列表</a>
+<p id="p1"></p>
+
+## :egg:Virtual DOM
+:spades:<a href="#title">回到目录</a><br>
+基本格式
+```JavaScript
+var vNode={
+    tag: 'div',
+    attribute: {
+        id: 'main'
+    },
+    children: [
+        //节点
+    ]
+}
+```
+分类: 
++ TestVNode: 文本节点
++ ElementVNode: 普通元素节点
++ ComponentVNode 组件节点
++ EmptyVNode: 没有内容的注释节点
++ CloneVNode 克隆节点,可以是以上任意类型的节点,唯一的区别在于isClone为true
+<p id="p2"></p>
+
+## :egg:Render函数
+:spades:<a href="#title">回到目录</a><br>
+用于创建VirtualDOM
+<p id="p3"></p>
+
+## :egg: createElement函数
+:spades:<a href="#title">回到目录</a><br>
+#### :hearts:基本参数
+有三个参数,举例说明
+```JavaScript
+Vue.component('dle',{
+    render: function(createElement){
+        return createElement(
+          'div'   //第一个参数
+          {
+              class: {
+                  'show': this.show
+              },
+              attrs: {
+                  id: 'element'
+              },
+              on: {
+                  click: this.handleClick   
+               }
+          },
+          '文本内容'  //第三个参数
+        )
+    }
+})
+```
+第一个参数必写,可以是HTML标签,也可以是组件或函数 
+#### :hearts:约束
+#### :hearts:使用JavaScript代替模板功能
+<p id="p4"></p>
+
+## :egg:函数化组件
+:spades:<a href="#title">回到目录</a><br>
+#### :hearts:
+<p id="p5"></p>
+
+## :egg:JSX
+:spades:<a href="#title">回到目录</a><br>
+#### :hearts:
+<p id="p6"></p>
+
+## :egg:使用Render函数开发可排序的表格组件
+:spades:<a href="#title">回到目录</a><br>
+#### :hearts:
+<p id="p7"></p>
+
+## :egg:留言列表
+:spades:<a href="#title">回到目录</a><br>
+#### :hearts:
