@@ -8,6 +8,7 @@
 #### :meat_on_bone:<a href="表单和v-model.md">表单和v-model</a>
 #### :meat_on_bone:<a href="组件.md">组件</a>
 #### :meat_on_bone:<a href="自定义事件.md">自定义事件</a>
+#### :meat_on_bone:<a href="Render函数.md">Render函数</a>
 ---------------------------------
 # ----------------------标题------------------------
 <p id="title"></p>
